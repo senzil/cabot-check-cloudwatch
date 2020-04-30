@@ -4,7 +4,7 @@
 from pip._internal.req import parse_requirements
 from setuptools import find_packages, setup
 
-requirements = parse_requirements('requirements.txt')
+requirements = parse_requirements('requirements.txt', session=False)
 
 setup(name='cabot_check_cloudwatch',
       version='0.1.2',
