@@ -1,10 +1,8 @@
 #!/usr/bin/env python
-
-# for pip >= 10
-from pip._internal.req import parse_requirements
 from setuptools import find_packages, setup
 
-requirements = parse_requirements('requirements.txt', session=False)
+with open("requirements.txt") as reqs_file:
+    reqs = reqs_file.readlines()
 
 setup(name='cabot_check_cloudwatch',
       version='0.1.2',
@@ -12,6 +10,6 @@ setup(name='cabot_check_cloudwatch',
       author='Arachnys',
       author_email='techteam@arachnys.com',
       url='http://cabotapp.com',
-      install_requires=requirements,
+      install_requires=reqs,
       packages=find_packages(),
     )
